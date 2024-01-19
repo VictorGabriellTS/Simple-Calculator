@@ -6,9 +6,8 @@ function Calc() {
             const calcInput = document.getElementById("calcInput");
             try {
                 let calcValue = eval(calcInput.value);
-                let finalResult = calcValue;
                 const resultText = document.getElementById("resultText");
-                resultText.innerText = finalResult;
+                resultText.innerText = calcValue;
                 resultText.classList.add("most-result");
                 return;
             } catch {
