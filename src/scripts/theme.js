@@ -1,8 +1,15 @@
 function SwitchTheme() {
+    const body = document.getElementById("body");
     function SwitchBodyClass() {
-        const body = document.getElementById("body");
         body.classList.toggle("light-theme");
         body.classList.toggle("dark-theme");
+    }
+
+    function SaveTheme() {
+        window.localStorage.setItem(
+            "theme",
+            body.classList.contains("dark-theme") ? "dark-theme" : "light-theme"
+        );
     }
 
     function SwitchThemeIcon() {
@@ -14,6 +21,7 @@ function SwitchTheme() {
     const switchThemeBtn = document.getElementById("switchThemeBtn");
     switchThemeBtn.addEventListener("click", function () {
         SwitchBodyClass();
+        SaveTheme();
         SwitchThemeIcon();
     });
 }
